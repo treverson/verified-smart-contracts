@@ -9,10 +9,10 @@ module ABSTRACT-SEMANTICS
 
   rule <k> ISZERO W => bool2Word(W  ==Int 0 ) ~> #push ... </k> [trusted]
 
-  rule <k> #gasExec(SCHED, EXP W0 W1) => Gexp < SCHED > +Int (Gexpbyte < SCHED > *Int 32) ... </k>
+  rule <k> #gasExec(SCHED, EXP W0 W1) => Gexp < SCHED > +Int (Gexpbyte < SCHED > *Int 32) ~> #deductGas ... </k>
     requires W1 =/=K 0 [trusted]
 
-  rule <k> #gasExec(SCHED, SSTORE INDEX VALUE) => Gsstoreset < SCHED > ... </k> [trusted]
+  rule <k> #gasExec(SCHED, SSTORE INDEX VALUE) => Gsstoreset < SCHED > ~> #deductGas ... </k> [trusted]
 
   rule <k> Ccallgas(SCHED, ISEMPTY:Bool, GCAP, GAVAIL, 0) => Cgascap(SCHED, GCAP, GAVAIL, Cextra(SCHED, ISEMPTY, 0)) ... </k> [trusted]
 
