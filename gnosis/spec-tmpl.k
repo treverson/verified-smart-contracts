@@ -131,16 +131,15 @@
             <nonce> 0 </nonce>
           </account>
 
-          <account>
-            // testing the external contract call in checkSignatures
-            <acctID> 9 </acctID>
-            <balance> _ </balance>
-            <code> #parseByteStack({EXTERNAL_CONTRACT_CODE}) </code>
-            <storage> _ </storage>
-            <origStorage> _ </origStorage>
-            <nonce> _ </nonce>
+         <account>
+             // testing the external contract call in checkSignatures
+             <acctID> #parseHexWord(substrString({SIG_BYTES}, 0, 32)) </acctID>
+             <balance> _ </balance>
+             <code> #parseByteStack({EXTERNAL_CONTRACT_CODE}) </code>
+             <storage> _ </storage>
+             <origStorage> _ </origStorage>
+             <nonce> _ </nonce>
           </account>
-
 {ACCOUNTS}
           ...
         </accounts>
