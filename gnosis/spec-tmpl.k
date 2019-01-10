@@ -131,6 +131,7 @@
             <nonce> 0 </nonce>
           </account>
 
+// TODO: move this in gnosis-spec.ini
          <account>
              // testing the external contract call in checkSignatures
              <acctID> #parseHexWord(substrString({SIG_BYTES}, 0, 32)) </acctID>
