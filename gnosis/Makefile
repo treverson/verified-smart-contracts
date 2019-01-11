@@ -7,7 +7,7 @@ SPEC_GROUP:=gnosis
 SPEC_INI:=gnosis-spec.ini
 
 KPROVE_OPTS:=--smt-prelude $(abspath $(dir $(abspath $(lastword $(MAKEFILE_LIST))))/evm.smt2) \
-             --deterministic-functions --cache-func-optimized --log-basic
+             --deterministic-functions --cache-func-optimized --log-basic --branching-allowed 0
 
 SPEC_NAMES:=encodeTransactionData \
             signatureSplit \
@@ -20,5 +20,5 @@ SPEC_NAMES:=encodeTransactionData \
             checkSignatures-thres-2-sig-v2-o0-neq-o1-success \
             checkSignatures-thres-2-sig-v2-o0-neq-o1-failure \
             checkSignatures-thres-1-sig-v0
-              
+
 include ../resources/kprove.mak

@@ -130,17 +130,6 @@
             <origStorage> .Map </origStorage>
             <nonce> 0 </nonce>
           </account>
-
-// TODO: move this in gnosis-spec.ini
-         <account>
-             // testing the external contract call in checkSignatures
-             <acctID> #parseHexWord(substrString({SIG_BYTES}, 0, 32)) </acctID>
-             <balance> _ </balance>
-             <code> #parseByteStack({EXTERNAL_CONTRACT_CODE}) </code>
-             <storage> _ </storage>
-             <origStorage> _ </origStorage>
-             <nonce> _ </nonce>
-          </account>
 {ACCOUNTS}
           ...
         </accounts>
