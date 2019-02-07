@@ -198,7 +198,7 @@ gnosis_test_files:=testKeccak-data1-spec.k \
                    testSignatureSplit-pos1-spec.k \
                    testSignatureSplit-pos2-spec.k
 
-proof_tests:=bihu vyper-erc20 zeppelin-erc20 hkg-erc20 hobby-erc20 sum-to-n ds-token-erc20 gnosis
+proof_tests:=vyper-erc20 zeppelin-erc20 sum-to-n
 
 # FIXME: restore the casper specs
 #proof_tests += casper
